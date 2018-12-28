@@ -22,5 +22,11 @@ nostand = oddless = re.sub('^\d*\s*[\n\r]', '\n',oddless, flags=re.MULTILINE)
 # removes roman numberals from frontmatter pages
 nopage= nostand = re.sub(roman, '\n', nostand, flags=re.MULTILINE)
 
+#Joins words split by dashes accross pages. You can replace the dash in the replacement with '' if you are certain your text has no hyphenated words
+joinwords= nopage =re.sub('[‐|‑|‒|–|—|―|−|﹘|﹣|－][/n/r]', '-',nopage, flags=re.MULTILINE)
+
+#allows for easily adding additional steps
+final = joinwords
+
 with open(output_file, "w", encoding="utf8") as pageless:
-    pageless.write(nopage)
+    pageless.write(final)
