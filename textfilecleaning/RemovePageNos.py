@@ -1,7 +1,7 @@
 import re
+import sys
 
-
-input_file = 'RulingChiefs.txt'
+input_file = sys.argv[1]
 output_file = 'pageless_'+input_file
 odd= "^\s*[A-Z| |-|-|ʻ|]{4,}\d+\s*[\n|\r]"
 even = "^\s*\d+\s*[A-Z| |-|-|ʻ|]{4,}\s*[\n|\r]"
