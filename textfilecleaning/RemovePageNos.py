@@ -1,6 +1,9 @@
 import re
 import sys
 
+#this script is primarily for removing page numbers and headers from OCRed texts saved as textfiles.
+#By default it assumes that headers are in all caps and that no other lines are in all caps. You may need to modify the regex if your file does not match this description.
+
 input_file = sys.argv[1]
 output_file = 'pageless_'+input_file
 odd= "^\s*[A-Z| |-|-|ʻ|]{4,}\d+\s*[\n|\r]"
